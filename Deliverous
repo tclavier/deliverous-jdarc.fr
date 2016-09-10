@@ -1,0 +1,18 @@
+mailman:
+  image: tclavier/mailman2
+  ports:
+  - ip: ml.jdarc.fr
+    container_port: 80
+    host_port: 80
+  - ip: ml.jdarc.fr
+    container_port: 25
+    host_port: 25
+  volumes: 
+  - name: mailman
+    path: /mailman
+  environment:
+    OPS: TomAres
+    ONLINE_MODE: false
+    WORLD_TYPE: DEFAULT
+    GENERATE_STRUCTURES: true
+    DEFAULT_WORLD_SIZE: 29999984
