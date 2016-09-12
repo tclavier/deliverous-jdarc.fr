@@ -9,7 +9,7 @@ mailman:
     host_port: 25
   volumes: 
   - name: mailman
-    path: /mailman
+    path: /var/lib/mailman
   environment:
     OPS: TomAres
     ONLINE_MODE: false
