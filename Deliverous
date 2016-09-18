@@ -1,5 +1,6 @@
 mailman:
   image: tclavier/mailman2
+  hostname: smtp.jdarc.fr
   ports:
   - ip: ml.jdarc.fr
     container_port: 80
@@ -16,3 +17,15 @@ mailman:
     WORLD_TYPE: DEFAULT
     GENERATE_STRUCTURES: true
     DEFAULT_WORLD_SIZE: 29999984
+
+sshd:
+  image: tclavier/mailman2-ssh
+  ports:
+  - ip: ml.jdarc.fr
+    container_port: 22
+    host_port: 22
+  volumes: 
+  - name: mailman
+    path: /var/lib/mailman
+  deploy_with:
+  - mailman
