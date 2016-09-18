@@ -11,12 +11,6 @@ mailman:
   volumes: 
   - name: mailman
     path: /var/lib/mailman
-  environment:
-    OPS: TomAres
-    ONLINE_MODE: false
-    WORLD_TYPE: DEFAULT
-    GENERATE_STRUCTURES: true
-    DEFAULT_WORLD_SIZE: 29999984
 
 sshd:
   image: tclavier/mailman2-ssh
@@ -29,3 +23,5 @@ sshd:
     path: /var/lib/mailman
   deploy_with:
   - mailman
+  environment:
+    MM_PASSWORD: {{ .mm-password }}
