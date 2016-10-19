@@ -25,4 +25,4 @@ sshd:
   deploy_with:
   - mailman
   environment:
-    MM_PASSWORD: {{ .mm-password }}
+  - MM_PASSWORD: {{ .mm-password }}
