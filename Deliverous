@@ -11,6 +11,7 @@ mailman:
   volumes: 
   - name: mailman
     path: /var/lib/mailman
+  snat: ml.jdarc.fr
 
 sshd:
   image: tclavier/mailman2-ssh
