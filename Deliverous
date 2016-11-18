@@ -24,3 +24,6 @@ sshd:
     path: /var/lib/mailman
   deploy_with:
   - mailman
+  environment:
+  - MM_PASSWORD: {{ .mm_password }}
+
